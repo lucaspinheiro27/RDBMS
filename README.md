@@ -1,2 +1,2 @@
 # RDBMS
-Practice scripts for Related Database Management Systems
+Practice scripts for Relational Database Management Systems
