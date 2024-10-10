@@ -75,3 +75,44 @@ SELECT title FROM film_list
 WHERE price BETWEEN 2 AND 4
 AND (category LIKE 'Documentary' OR category LIKE 'Horror')
 AND actors LIKE '%GRIPA%';
+
+SELECT name FROM customer_list
+ORDER BY name
+LIMIT 10;
+
+SELECT address, last_update FROM  address
+ORDER BY last_update LIMIT 5;
+
+SELECT address, district FROM address
+ORDER BY district, address;
+
+SELECT address, district FROM address
+ORDER BY district ASC, address DESC
+LIMIT 10;
+
+SELECT name FROM customer_list LIMIT 10;
+
+SELECT name FROM customer_list
+LIMIT 5, 5;
+
+SELECT id, name FROM customer_list
+ORDER BY id LIMIT 10;
+
+SELECT id, name FROM customer_list
+ORDER BY id LIMIT 10 OFFSET 5;
+
+SELECT city, country FROM city INNER JOIN country
+ON city.country_id = country.country_id
+WHERE country.country_id > 5
+ORDER BY country, city;
+
+SELECT city, country FROM city
+INNER JOIN country USING (country_id)
+WHERE country.country_id < 5
+ORDER BY country, city;
+
+SELECT COUNT(1) FROM city INNER JOIN country
+ON city.country_id = country.country_id
+WHERE country.country_id = 49
+ORDER BY country, city;
+
